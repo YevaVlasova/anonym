@@ -1,0 +1,196 @@
+@import '../../../../components/UI/styles/vars';
+@import '../../../../components/UI/styles/mixins';
+
+.second {
+    margin: 150rem 0;
+}
+.team {
+    @include flex-center;
+    flex-direction: column;
+    &__title {
+        @include text($ff, 700, 62rem, 68rem, $white);
+        margin-bottom: 32rem;
+        text-transform: uppercase;
+    }
+    .box {
+        position: relative;
+        width: 300rem;
+        height: 700rem;
+        @include flex-center;
+        margin: 60rem 30rem;
+        transition: 0.5s;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50rem;
+            width: 50%;
+            height: 100%;
+            background: #fff;
+            border-radius: $radiusSmall;
+            transform: skewX(15deg);
+            transition: $transition;
+
+        }
+        &._grad1::after, &._grad1::before {
+            background: $grad1;
+        }
+        &._grad2::after, &._grad2::before {
+            background: $grad2;
+        }
+        &._grad3::after, &._grad3::before {
+            background: $grad3;
+        }
+        &._grad4::after, &._grad4::before {
+            background: $grad4;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50rem;
+            width: 50%;
+            height: 100%;
+            background: #fff;
+            border-radius: $radiusSmall;
+            transform: skewX(15deg);
+            transition: $transition;
+            filter: blur(30rem);
+            transition: 0.5s;
+        }
+        &:hover:before, &:hover:after {
+            transform: skewX(0deg);
+            left: 20rem;
+            width: calc(100% - 90rem);
+
+        }
+        & > span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 50;
+            pointer-events: none;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: $radiusSmall;
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur( 5.5rem );
+                -webkit-backdrop-filter: blur( 5.5rem );
+                opacity: 0;
+                transition: 0.5s;
+                animation: animate 2s ease-in-out infinite;
+                box-shadow: $shadow;
+                @keyframes animate {
+                    0%,100% {
+                        transform: translateY(10rem);
+                    }
+                    50% {
+                        transform: translateY(-10rem);
+                    }
+                }
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: $radiusSmall;
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur( 5.5rem );
+                -webkit-backdrop-filter: blur( 5.5rem );
+                opacity: 0;
+                transition: 0.5s;
+                animation: animate 2s ease-in-out infinite;
+                box-shadow: $shadow;
+                animation-delay: -1s;
+                @keyframes animate {
+                    0%,100% {
+                        transform: translateY(10rem);
+                    }
+                    50% {
+                        transform: translateY(-10rem);
+                    }
+                }
+            }
+        }
+        &:hover span::before {
+            top: 20rem;
+            left: 10rem;
+            width: 100rem;
+            height: 100rem;
+            opacity: 1;
+        }
+        &:hover span::after {
+            bottom: 20rem;
+            right: 10rem;
+            width: 100rem;
+            height: 100rem;
+            opacity: 1;
+        }
+    }
+}
+
+.content {
+    position: relative;
+    left: 0;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: $shadow;
+    border-radius: $radiusSmall;
+    backdrop-filter: blur( 5.5rem );
+    -webkit-backdrop-filter: blur( 5.5rem );
+    z-index: 1;
+    transition: 0.5s;
+    color: #fff;
+    h3 {
+        @include text($ff, 700, 24rem, 30rem, $white);
+        margin-bottom: 12rem;
+    }
+    p {
+        @include text($ff, 500, 18rem, 24rem, $white);
+        margin-bottom: 12rem;
+        padding-bottom: 20rem;
+    }
+
+    &__img {
+        width: 300rem;
+        border-radius: $radiusSmall $radiusSmall 0 0;
+        object-fit: cover;
+        overflow: hidden;
+        margin-bottom: 32rem;
+        @include flex-center;
+        &:hover {
+            border-radius: 0 0 0 0;
+        }
+    }
+
+    &__info {
+        padding: 0 40rem;
+    }
+}
+.team .box:hover .content {
+    left: -25rem;
+    padding: 60rem 40rem;
+}
+.team-list {
+    display: flex;
+    align-items: center;
+}
+.slide {
+    height: 900rem;
+    @include flex-center;
+    width: 250rem;
+    overflow: hidden;
+}
+.carousel .control-dots .dot {
+    box-shadow: $shadow !important;
+}

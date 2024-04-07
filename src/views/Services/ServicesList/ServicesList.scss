@@ -1,0 +1,16 @@
+@import '../../../components/UI/styles/vars';
+@import '../../../components/UI/styles/mixins';
+
+.services {
+    @include tablet {
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+    }
+    &__list {
+        transition: $transition;
+        @include tablet {
+            display: flex;
+        }
+    }
+}

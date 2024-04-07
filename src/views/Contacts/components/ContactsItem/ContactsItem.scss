@@ -1,0 +1,59 @@
+@import '/src/components/UI/styles/vars';
+@import '/src/components/UI/styles/mixins';
+
+.contact-item {
+    display: flex;
+    padding: 20rem;
+    gap: 14rem;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: $radius;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    &__country {
+        display: flex;
+        align-items: center;
+        gap: 14rem;
+        @include text($ff, 400, 18rem, 22rem, $white);
+    }
+    &__country>svg {
+        width: 17rem;
+        height: auto;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 14rem;
+    }
+
+    &__address {
+        @include text($ff, 700, 16rem, 18rem, $white);
+    }
+
+    &__mail>a {
+        @include text($ff, 400, 14rem, 17rem, null);
+        color: rgba(255, 255, 255, 0.725);
+        margin-bottom: 8rem;
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &__phones {
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
+        margin-bottom: 12rem;
+    }
+
+    &__number>a {
+        @include text($ff, 400, 14rem, 17rem, null);
+        color: rgba(255, 255, 255, 0.725);
+        &:hover {
+            color: $white;
+        }
+    }
+}

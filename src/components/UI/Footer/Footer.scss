@@ -1,0 +1,163 @@
+@import '../styles/vars';
+@import '../styles/mixins';
+@import "../../../index.scss";
+
+.footer {
+    @include glass-bg;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 50rem;
+        padding: 0 80rem;
+        @include tablet {
+            padding: 40px 30px 20px;
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40rem;
+        }
+    }
+}
+
+.footer-main {
+    display: flex;
+    padding-top: 55rem;
+    justify-content: space-between;
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        justify-items: center;
+        margin-inline: auto;
+        gap: 30rem;
+        padding-top: 0;
+    }
+    @include tablet-small {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__logo {
+        @include flex-center;
+        flex-direction: column;
+        max-width: 332rem;
+        margin: calc(1vh + 1vw);
+        @include tablet {
+            max-width: 250rem;
+            margin: 20rem;
+        }
+        @include tablet-small {
+            display: none;
+        }
+    }
+
+    &__footer-logo {
+        @include flex-center;
+        @include tablet-small {
+
+        }
+    }
+
+    &__desc {
+        @include text($ff, 400, 18rem, 26rem, $white);
+        text-align: center;
+        max-width: 330rem;
+        margin-top: 130rem;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 24rem;
+    }
+
+    &__pages {
+        display: flex;
+        flex-direction: column;
+        gap: 24rem;
+
+        &>a {
+            @include text($ff, 400, 18rem, 26rem, $white);
+            text-transform: uppercase;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 36rem;
+        @include tablet-small {
+            margin-bottom: 50rem;
+        }
+    }
+}
+
+.footer-logo {
+
+    &__link {
+        margin-bottom: 20rem;
+        display: block;
+        cursor: pointer;
+        max-width: 100%;
+    }
+
+    &__link-img {
+        @include flex-center;
+        margin-top: -45rem;
+    }
+
+    &__img {
+        object-fit: contain;
+        max-width: 100%;
+        display: block;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    &__bg {
+        position: absolute;
+        height: 250rem;
+        width: 250rem;
+        overflow: hidden;
+    }
+
+    &__bg>svg {
+        position: absolute;
+        vertical-align: middle;
+        overflow: hidden;
+        max-width: 100%;
+        object-fit: contain;
+        &:nth-child(2n) {
+            animation: spin 5s linear infinite;
+            @keyframes spin {
+                0% {
+                    rotate: (0);
+                }
+                50% {
+                    rotate: (-180deg);
+                }
+                100% {
+                    rotate: (-360deg);
+                }
+            }
+        }
+        @include tablet {
+            max-width: 80%;
+            margin-left: 20rem;
+        }
+    }
+}
+
+.footer-copyright {
+    @include flex-center;
+    padding: 16rem;
+    @include text($ff, 400, 18rem, 26rem, $white);
+    @include tablet {
+        margin-top: 50rem;
+    }
+}

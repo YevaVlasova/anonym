@@ -1,0 +1,73 @@
+@import '../styles/vars';
+@import '../styles/mixins';
+
+.preloader {
+    animation: changeGradient 2s infinite linear;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include flex-center;
+    z-index: 15;
+    
+    &__bg {
+        background: $gradBlack;
+        width: 100%;
+        height: 100vh;
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include flex-center;
+    }
+
+    &__img {
+        @include flex-center;
+    }
+
+    &__logo {
+        position: relative;
+        object-fit: contain;
+        display: block;
+        max-width: 100%;
+        height: 100%;
+    }
+
+    &__elements {
+        position: absolute;
+        overflow: hidden;
+        width: 250rem;
+        height: 250rem;
+        @include tablet {
+            display: none;
+        }
+
+        &:nth-child(2n) {
+            animation: rotate 2s linear infinite;
+
+        }
+    }
+    &__elements>svg {
+        position: absolute;
+        vertical-align: middle;
+        overflow: hidden;
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+@keyframes changeGradient {
+  0%  { background: $primaryBlue; }
+  50%  { background: $primaryTurq; }
+  100%  { background: $primaryPurp; }
+}

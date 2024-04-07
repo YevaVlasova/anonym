@@ -1,0 +1,62 @@
+@import '../../../../components/UI/styles/vars';
+@import '../../../../components/UI/styles/mixins';
+
+.our-contacts {
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        width: 100%;
+        margin-bottom: 40rem;
+        @include text($ff, 700, 40rem, 36rem, $white);
+        text-transform: uppercase;
+    }
+
+    &__breadcrumbs {
+        margin-bottom: 40rem;
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300rem, 1fr));
+        gap: 24rem;
+        padding-bottom: 24rem;
+        z-index: 11;
+    }
+
+    &__info-phone {
+        padding-right: 12rem;
+    }
+
+    &__info-socials {
+        padding-right: 12rem;
+    }
+}
+.info-phone {
+
+    &__links {
+        display: flex;
+        gap: 20rem;
+        align-items: center;
+    }
+
+    &__pic {
+        width: 40rem;
+        height: 40rem;
+    }
+
+    &__numbs {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+
+        a {
+            @include text($ff, 700, 14rem, 18rem, $white);
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import '../../../components/UI/styles/vars';
+@import '../../../components/UI/styles/mixins';
+
+.service-page {
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        margin-inline: auto;
+        justify-content: center;
+        max-width: 702px;
+        width: 100%;
+        margin: auto;
+        padding: 0 32rem 80rem;
+    }
+    @include tablet-small {
+        padding: 0;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        @include text($ff, 700, 40rem, 115%, $white);
+        margin-bottom: 30rem;
+        text-transform: uppercase;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        @include desktop-small {
+            flex-wrap: wrap-reverse;
+        }
+        @include tablet {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__desc {
+        max-width: 350rem;
+        @include text($ff, 500, 18rem, 22rem, $white);
+        @include tablet {
+            max-width: 900rem;
+            margin: 0 auto;
+        }
+        & p {
+            margin-bottom: 30rem;
+            @include desktop-small {
+                width: 600rem;
+            }
+            @include tablet {
+                width: auto;
+            }
+        } 
+    }
+
+    &__img {
+        z-index: 10;
+        @include tablet {
+            margin: 0 auto;
+            max-width: 415rem;
+            height: auto;
+            position: static;
+        }
+
+        & img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}

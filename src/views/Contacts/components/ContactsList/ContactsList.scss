@@ -1,0 +1,16 @@
+@import '/src/components/UI/styles/vars';
+@import '/src/components/UI/styles/mixins';
+
+.contacts {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300rem, 1fr));
+        gap: 24rem;
+        @include desktop-small {
+            margin-top: 50rem;
+        }
+        @include tablet-small {
+            margin-top: 100rem;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+@import '../styles/vars';
+@import '../styles/mixins';
+
+.header {
+    @include glass-bg;
+    height: 70rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        z-index: 3;
+        justify-content: space-between;
+        padding: 0 20rem;
+    }
+
+    &__logo, &__logo>a, &__logo>img {
+        width: 140rem;
+        height: auto;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 30rem;
+
+        a {
+            @include text($ff, 700, 22rem, 26rem, $white);
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:hover {
+                text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+                -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+                -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+                transition: all 0.4s ease 0s;
+            }
+            &.active {
+                animation: TxtColor 5s linear infinite;
+                -webkit-animation: TxtColor 5s ease-in-out infinite;
+                &:hover {
+                    text-shadow: none;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                }
+            }
+        }
+        
+    }
+
+    &__language {
+        position: relative;
+        align-items: center;
+        gap: 3rem;
+        &>button {
+            @include text($ff, 700, 18rem, 20rem, $white);
+        }
+
+        &:hover {
+            display: block;
+        }
+
+    }
+}

@@ -1,0 +1,82 @@
+@import '../../components/UI/styles/vars';
+@import '../../components/UI/styles/mixins';
+
+.home-main {
+    @include flex-center;
+    height: 100vh;
+    
+    &__screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+        @include text($ff, 700, 36rem, 60rem, $white);
+        & span {
+            animation: TxtColor 5s linear infinite;
+        }
+        :first-child {
+            transform: perspective(400px) rotateX(-30deg);
+        }
+    }
+
+    &__img {
+        width: 450px;
+        margin-top: 40rem;
+        z-index: 11;
+        :nth-child(2n) {
+            margin-top: -443rem;
+            width: 450px;
+            @include desktop-small {
+                margin-top: -492rem;
+
+            }
+            @include tablet {
+                margin-top: -553rem;
+
+            }
+            @include tablet-small {
+                margin-top: -632rem;
+
+            }
+            @include mobile {
+                margin-top: -735rem;
+
+            }
+        }
+    }
+
+    &__pic {
+        &>img {
+            display: inline-block;
+        }
+    }
+
+    &__scroll {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        vertical-align: middle;
+        gap: 20rem;
+        @include text($ff, 400, 18rem, 26rem, $white);
+        transform: rotate(-90deg) translateY(-100%);
+        position: absolute;
+        bottom: 60rem;
+        z-index: 12;
+    }
+    &__line {
+        height: 1px;
+        width: 3vw;
+        background-color: #FFFFFF;
+        margin-left: auto;
+        margin-right: 0;
+        animation: widthLine 3s ease-in-out infinite;
+    }
+}

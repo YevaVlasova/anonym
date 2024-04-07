@@ -1,0 +1,47 @@
+@import '../../components/UI/styles/vars';
+@import '../../components/UI/styles/mixins';
+
+.service {
+    &__container {
+        padding: 70rem 80rem 150rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        max-width: 350rem;
+        padding-right: 40rem;
+        gap: 5rem;
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            max-width: 1260rem;
+            padding-right: 0;
+            height: auto;
+            overflow-y: hidden;
+        }
+    }
+
+    &__page {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding-top: 50rem;
+        @include tablet {
+            display: flex;
+            margin-inline: auto;
+            align-items:center;
+            flex-direction: column;
+            padding: 50rem;
+        }
+        @include tablet-small {
+            padding: 20rem 0 0;
+        }
+    }
+}

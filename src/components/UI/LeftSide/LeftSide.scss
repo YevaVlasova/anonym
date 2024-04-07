@@ -1,0 +1,51 @@
+@import '../styles/vars';
+@import '../styles/mixins';
+
+.left-side {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vh;
+    height: 70px;
+    @include glass-bg;
+    z-index: 10000;
+    padding-right: 50px;
+    padding-left: 80px;
+    transform-origin: left top;
+    transform: rotate(90deg) translateY(-100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    @include tablet {
+        display: none;
+    }
+
+    &__time {
+        transform: rotate(-180deg);
+        padding-right: 100rem;
+        display: flex;
+        gap: 40rem;
+        margin-bottom: 0;
+        word-spacing: 10px;
+        @include text($ff, 400, 18rem, 26rem, $white);
+    }
+
+    &__socials {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transform: rotate(180deg);
+    }
+
+    &__li {
+        transform: rotate(90deg);
+        list-style: none;
+        & svg {
+            width: 40rem;
+            height: 40rem;
+        }
+    }
+}

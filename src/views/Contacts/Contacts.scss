@@ -1,0 +1,10 @@
+@import '../../components/UI/styles/vars';
+@import '../../components/UI/styles/mixins';
+
+.contacts {
+    &__container {
+        padding: 150rem 80rem 150rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+}

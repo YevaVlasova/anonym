@@ -1,0 +1,97 @@
+@import '/src/components/UI/styles/vars';
+@import '/src/components/UI/styles/mixins';
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    padding-left: 24rem;
+
+    &__arrows {
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+        gap: 44rem;
+        margin-top: 35rem;
+        margin-bottom: 40rem;
+
+        &>svg {
+            width: 140rem;
+            height: auto;
+            rotate: 45deg;
+        }
+    }
+
+    &__field {
+        margin: 24rem 0;
+    }
+
+    &__input {
+        display: flex;
+        padding: 30rem;
+        gap: 14rem;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur( 10px );
+        -webkit-backdrop-filter: blur( 10px );
+        border-radius: $radius;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        width: 100%;
+        @include text($ff, 600, 14rem, 100%, $white);
+        text-transform: uppercase;
+    }
+
+    &__btn {
+        cursor: pointer;
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        padding: 20rem 30rem;
+        background: linear-gradient(90deg, rgba(145,9,212,0.1) 0%, rgba(9,38,212,0.1) 100%);
+        border-radius: $radius;
+        border: 1px solid $white;
+        @include text($ff, 600, 14rem, 22rem, $white);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: $transition;
+        position: relative;
+        overflow: hidden;
+        z-index: 11;
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(145,9,212,0.3) 0%, rgba(9,38,212,0.3) 100%);
+            border-radius: $radius;
+            transform: translate3D(0,-100%,0);
+            transition: $transition;
+            z-index: -1;
+        }
+
+        &::before {
+            background: linear-gradient(90deg, rgba(145,9,212,0.1) 0%, rgba(9,38,212,0.1) 100%);
+            z-index: -2;
+            transform: translate3D(0,0,0);
+        }
+
+        &::after {
+            top: 0;
+            z-index: -1;
+            transform: translate3D(-101%,0,0);
+        }
+
+        &:hover {
+            color: #ffffffa5;
+            &::after {
+                transform: translate3D(0,0,0);
+                transition: $transition;
+            }
+        }
+    }
+    
+}

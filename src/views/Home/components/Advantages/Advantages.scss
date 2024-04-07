@@ -1,0 +1,109 @@
+@import '../../../../components/UI/styles/vars';
+@import '../../../../components/UI/styles/mixins';
+
+.advantage-main {
+    &__container {
+        margin-top: 250rem;
+        display: flex;
+        flex-direction: column;
+        padding: 100rem 80rem 0;
+    }
+
+    &__title {
+        & h3 {
+            @include text($ff, 700, 60rem, 115%, $white);
+            letter-spacing: 2px;
+            margin-bottom: 50rem;
+            text-transform: uppercase;
+        }
+    }
+}
+.advantage-card {
+    display: flex;
+    align-items: center;
+    gap: 30rem;
+    margin-bottom: 100rem;
+    position: relative;
+    &._left {
+        flex-direction: row-reverse;
+    }
+
+    &__info {
+        max-width: 600rem;
+    }
+
+    &__info-title {
+        & h3 {
+            @include text($ff, 700, 40rem, 100%, $white);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30rem;
+        }
+    }
+
+    &__info-desc {
+        & p {
+            @include text($ff, 400, 20rem, 24rem, $white);
+            opacity: 0.8;
+            margin-bottom: 30rem;
+
+        }
+    }
+    &__img1 {
+        z-index: 11;
+        @include tablet {
+            position: absolute;
+            right: -300rem;
+            top: -300rem;
+            z-index: 1;
+            width: 60%;
+        }
+        @include mobile {
+            right: -350rem;
+            top: -200rem;
+        }
+    }
+    &__img2 {
+        z-index: 11;
+        @include tablet {
+            position: absolute;
+            left: -300rem;
+            top: 20rem;
+            z-index: 1;
+            width: 60%;
+        }
+        @include mobile {
+            left: -400rem;
+            width: 70%;
+        }
+    }
+}
+
+.info-list {
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 24rem;
+        & li {
+            list-style: none;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 20rem;
+
+        & h4 {
+            @include text($ff, 600, 20rem, 100%, $white);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10rem;
+        }
+        & p {
+            @include text($ff, 400, 16rem, 19rem, $white);
+            opacity: 0.8;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+const Instagram = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 39" id="Instagram"><path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M22.3113 12.5H16.3113C14.1022 12.5 12.3113 14.2909 12.3113 16.5V22.5C12.3113 24.7091 14.1022 26.5 16.3113 26.5H22.3113C24.5204 26.5 26.3113 24.7091 26.3113 22.5V16.5C26.3113 14.2909 24.5204 12.5 22.3113 12.5Z" clipRule="evenodd" className="colorStroke2400ff svgStroke"></path><path stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.3113 22.5C17.6545 22.5 16.3113 21.1569 16.3113 19.5C16.3113 17.8431 17.6545 16.5 19.3113 16.5C20.9682 16.5 22.3113 17.8431 22.3113 19.5C22.3113 20.2956 21.9952 21.0587 21.4326 21.6213C20.87 22.1839 20.107 22.5 19.3113 22.5Z" clipRule="evenodd" className="colorStroke2400ff svgStroke"></path><rect width="1" height="1" x="22.811" y="16" stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" transform="rotate(-90 22.811 16)" className="colorStroke2400ff svgStroke"></rect><circle cx="19.311" cy="19.5" r="18.121" stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="colorStroke2400ff svgStroke"></circle></svg>
+    );
+}
+
+export default Instagram;

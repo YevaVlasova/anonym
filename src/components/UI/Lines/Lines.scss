@@ -1,0 +1,109 @@
+@import '../styles/vars';
+@import '../styles/mixins';
+
+.lines {
+    &__container {
+        top: 0;
+        width: 5vw;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        text-align: right;
+        z-index: 1;
+        
+        @include tablet {
+            display: none;
+        }
+    }
+}
+
+.line {
+    height: 1px;
+    width: 3vw;
+    background-color: $white;
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.line1 {
+    animation: widthLine .9s ease-in-out infinite;
+}
+.line2 {
+    animation: widthLine 1.1s ease-in-out infinite;
+    margin-bottom: 8vh;
+}
+.line3 {
+    animation: widthLine 1.3s ease-in-out infinite;
+    margin-bottom: 10vh;
+}
+.line4 {
+    animation: widthLine 1s ease-in-out infinite;
+}
+.line5 {
+    animation: widthLine 1.2s ease-in-out infinite;
+}
+.line6 {
+    animation: widthLine 1.4s ease-in-out infinite;
+    margin-bottom: 5vh;
+}
+.line7 {
+    animation: widthLine .5s ease-in-out infinite;
+}
+.line8 {
+    animation: widthLine .8s ease-in-out infinite;
+}
+.line9 {
+    animation: widthLine .7s ease-in-out infinite;
+    margin-bottom: 10vh;
+}
+.line10 {
+    animation: widthLine .6s ease-in-out infinite;
+}
+.line11 {
+    animation: widthLine 1.3s ease-in-out infinite;
+    margin-bottom: 15vh;
+}
+.line21 {
+    animation: widthLine .8s ease-in-out infinite;
+}
+.line31 {
+    animation: widthLine 1.2s ease-in-out infinite;
+}
+.line41 {
+    animation: widthLine .5s ease-in-out infinite;
+    margin-bottom: 5vh;
+}
+.line51 {
+    animation: widthLine 1.1s ease-in-out infinite;
+}
+.line61 {
+    animation: widthLine 1s ease-in-out infinite;
+    margin-bottom: 8vh;
+}
+.line71 {
+    animation: widthLine 1.4s ease-in-out infinite;
+    margin-bottom: 15vh;
+}
+.line81 {
+    animation: widthLine .6s ease-in-out infinite;
+}
+.line91 {
+    animation: widthLine .9s ease-in-out infinite;
+}
+.line110 {
+    animation: widthLine .7s ease-in-out infinite;
+    margin-bottom: 5vh;
+}
+
+@keyframes widthLine {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 3vw;
+    }
+    100% {
+        width: 0;
+    }
+}
